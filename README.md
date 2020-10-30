@@ -29,7 +29,7 @@ Usage:
     
 ##### Notes: 
 * Sometimes the ascii is printed incorrectly, the ± sign could look like a � sign 
-when a floatE variable is printed. To fix this, set fix_ascii (line 63) to true.
+when a floatE variable is printed. To fix this, set fix_ascii (line 5) to true.
 * Currently, this modules only propagates uncorrelated errors. This is fine for things like 
 dividing two variables that both have an uncertainty, but it can go wrong if the expression is not symplified.
 Expressions like `a - a` should give 0 (without uncertainties), but this is not always the case.
