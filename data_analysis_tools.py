@@ -13,6 +13,7 @@ def _fix_ascii():
 
 
 if fix_ascii:
+
     _fix_ascii()
 
 
@@ -141,7 +142,7 @@ class floatE:
                             2 + (np.log(self.val) * self.val**a.val * a.error) ** 2)
             return floatE(self.val**a.val, error)
         except AttributeError:  # `a` is a regular float
-            return floatE(self.val**a, a * self.val * (a - 1) * self.error)
+            return floatE(self.val**a, abs(a * self.val * (a - 1) * self.error))
 
     def __rpow__(self, a):  # a^self
         return floatE(a ** self.val, abs(np.log(a) * a**self.val * self.error))
